@@ -55,7 +55,9 @@ PASSIVE_JANA = re.compile(
     r"(?:जाता|जाती|जाते|जाएगा|जाएगी|जाएँगे|जाएंगे|जाना|जा\s+सक|जा\s+रहा|जा\s+रही|जा\s+रहे)"
 )
 # Active uses of "<verb> जाना" that are not passive.
-PASSIVE_FALSE = {"चला", "चली", "चले", "आ", "हो", "बन", "रह", "सो", "मिल", "भाग", "ले", "दे"}
+PASSIVE_FALSE = {"चला", "चली", "चले", "आ", "हो", "बन", "रह", "सो", "मिल", "भाग", "ले", "दे",
+                 # postpositions: "Mumbai से जाता है" is not passive
+                 "से", "के", "की", "का", "ने", "में", "को", "पे"}
 
 TU_FORMS = re.compile(r"(?<![ऀ-ॿ])(?:तुम|तुम्हें|तुमको|तुम्हारा|तुम्हारी|तुम्हारे|तुमने)(?![ऀ-ॿ])")
 AAP_FORMS = re.compile(r"(?<![ऀ-ॿ])(?:आप|आपको|आपका|आपकी|आपके|आपने)(?![ऀ-ॿ])")
@@ -224,12 +226,16 @@ def check(text, mode, strict, formal, translit, roots, is_html=False):
         if ";" in line and has_hindi:
             issues.append((no, "error", "5.5", "Semicolon है। दो sentence बनाइए।"))
 
+        if "—" in line and has_hindi:
+            issues.append((no, "error", "5.8", 'Em dash (—) है। "।" या comma लगाइए।'))
+
         if re.search(rf"[{DEVA}]\.(?:\s|$)", line):
             issues.append((no, "error", "9.1", 'Hindi sentence "." से ख़त्म हुआ। "।" लगाइए।'))
 
         for m in PASSIVE_JANA.finditer(line):
             first = m.group().split()[0]
-            if first not in PASSIVE_FALSE:
+            # "बढ़ता जाएगा" (keeps growing) is progressive, not passive.
+            if first not in PASSIVE_FALSE and not first.endswith(("ता", "ती", "ते")):
                 issues.append((no, "warning", "4.3", f'शायद passive: "{m.group()}"। करने वाले को subject बनाइए।'))
 
         if "द्वारा" in line and not any(i[0] == no and "द्वारा" in i[3] for i in issues):

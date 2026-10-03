@@ -154,6 +154,14 @@
 | सुझाव | सलाह, suggestion | warning |
 | निष्पादन | चलाना, run | error |
 | समस्त | सारे, सब | error |
+| बकाया | बाकी | error |
+| निष्कर्ष | नतीजा | error |
+| दस्तावेज़ | document | warning |
+| दस्तावेज | document | warning |
+| श्रेय | credit | error |
+| बारीकी | detail | warning |
+| स्वतंत्र | अलग, अपने आप | warning |
+| दायरा | scope, हद | warning |
 
 NOTE: "script" column बताता है कि check करने वाली script क्या दिखाएगी। कुछ शब्द ("कारण", "उत्तर", "समस्या") कई लोग बोलते भी हैं। इसलिए उन पर warning आती है, error नहीं। Context देखकर फ़ैसला कीजिए।
 

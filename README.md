@@ -60,19 +60,19 @@ More examples, including a task-completion report, are in [`examples/before-afte
 | Words | Use only words from the approved list, technical names, and technical verbs. Prefer the spoken word: शुरू, not प्रारंभ. Use one name for one thing. |
 | English inside Hindi | Attach postpositions directly: function को, cache में, server पर. Make verbs with करना: deploy कीजिए. Keep each English noun's gender consistent. |
 | Verbs | Active voice. No किया जाता है, no द्वारा. Use the आप imperative in procedures: चलाइए, हटाइए. |
-| Sentences | At most 20 words in a procedure step and 25 in a description. One idea per sentence. Put the condition first: "अगर build fail हो, तो log खोलिए।" No semicolons. |
+| Sentences | At most 20 words in a procedure step and 25 in a description. One idea per sentence. Put the condition first: "अगर build fail हो, तो log खोलिए।" No semicolons, no em dashes (—). |
 | Paragraphs | At most 6 sentences, one topic. |
 | Warnings | **खतरा:** for loss you can't undo (data, money, security). **ध्यान दीजिए:** for rework. Give the command first, then the reason. |
 | Explaining | Start with the problem, not the definition. Use real numbers before symbols. State what it does *not* do. Every recommendation gets a क्योंकि. |
 
-The full set is 52 rules plus 4 general recommendations, each with a wrong and a right example: [`references/writing-rules.md`](references/writing-rules.md).
+The full set is 53 rules plus 4 general recommendations, each with a wrong and a right example: [`references/writing-rules.md`](references/writing-rules.md).
 
 ## What's in the repo
 
 | File | What it is |
 |---|---|
 | [`SKILL.md`](SKILL.md) | The instructions the model loads, in 8 steps |
-| [`references/writing-rules.md`](references/writing-rules.md) | 52 rules and 4 recommendations, with examples |
+| [`references/writing-rules.md`](references/writing-rules.md) | 53 rules and 4 recommendations, with examples |
 | [`references/word-list.md`](references/word-list.md) | 464 approved spoken-Hindi words, each with part of speech, forms, and an English gloss |
 | [`references/substitutions.md`](references/substitutions.md) | ~140 formal words with spoken replacements, ~170 Devanagari-spelled English words, the categories of words that stay in English, and a gender table for English nouns |
 | [`examples/before-after.md`](examples/before-after.md) | Six worked rewrites |
@@ -125,7 +125,7 @@ The checker finds:
 - Roman Hindi (hai, karo, nahi)
 - passive voice with जाता है or द्वारा
 - sentences and paragraphs that are too long (only those that contain Hindi)
-- semicolons, Devanagari digits, and Hindi sentences that end with "." instead of "।"
+- semicolons, em dashes, Devanagari digits, and Hindi sentences that end with "." instead of "।"
 - आप and तुम mixed in one text
 
 Exit code `0` means no errors, and `1` means at least one error. Warnings don't change the exit code, so you can use the checker in CI.
