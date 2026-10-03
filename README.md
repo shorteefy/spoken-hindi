@@ -62,17 +62,19 @@ More examples, including a task-completion report, are in [`examples/before-afte
 | Verbs | Active voice. No किया जाता है, no द्वारा. Use the आप imperative in procedures: चलाइए, हटाइए. |
 | Sentences | At most 20 words in a procedure step and 25 in a description. One idea per sentence. Put the condition first: "अगर build fail हो, तो log खोलिए।" No semicolons, no em dashes (—). |
 | Paragraphs | At most 6 sentences, one topic. |
+| New terms | Before a new term, method, or symbol appears, say why it is needed. Then give its name, a plain meaning, and a small worked example with real numbers. Use at most 3–4 new terms per answer. |
+| Layout | Explain in 2–3 sentence paragraphs. Put an `&nbsp;` line between paragraphs so the gap shows in editors like VS Code. Use bullets only for parallel lists, and bold 3–6 key sentences. |
 | Warnings | **खतरा:** for loss you can't undo (data, money, security). **ध्यान दीजिए:** for rework. Give the command first, then the reason. |
 | Explaining | Start with the problem, not the definition. Use real numbers before symbols. State what it does *not* do. Every recommendation gets a क्योंकि. |
 
-The full set is 53 rules plus 4 general recommendations, each with a wrong and a right example: [`references/writing-rules.md`](references/writing-rules.md).
+The full set is 56 rules plus 4 general recommendations, each with a wrong and a right example: [`references/writing-rules.md`](references/writing-rules.md).
 
 ## What's in the repo
 
 | File | What it is |
 |---|---|
 | [`SKILL.md`](SKILL.md) | The instructions the model loads, in 8 steps |
-| [`references/writing-rules.md`](references/writing-rules.md) | 53 rules and 4 recommendations, with examples |
+| [`references/writing-rules.md`](references/writing-rules.md) | 56 rules and 4 recommendations, with examples |
 | [`references/word-list.md`](references/word-list.md) | 464 approved spoken-Hindi words, each with part of speech, forms, and an English gloss |
 | [`references/substitutions.md`](references/substitutions.md) | ~140 formal words with spoken replacements, ~170 Devanagari-spelled English words, the categories of words that stay in English, and a gender table for English nouns |
 | [`examples/before-after.md`](examples/before-after.md) | Six worked rewrites |

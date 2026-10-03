@@ -21,7 +21,7 @@
 | File | काम |
 |---|---|
 | `SKILL.md` | LLM के लिए मुख्य नियम |
-| `references/writing-rules.md` | 53 नियम और 4 आम सलाह, examples के साथ |
+| `references/writing-rules.md` | 56 नियम और 4 आम सलाह, examples के साथ |
 | `references/word-list.md` | 464 मंज़ूर Hindi शब्द |
 | `references/substitutions.md` | शुद्ध → बोलचाल, Devanagari में लिखी English, English शब्दों का gender |
 | `examples/before-after.md` | 6 examples: बदलाव से पहले और बाद |
